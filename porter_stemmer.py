@@ -199,7 +199,7 @@ class PorterStemmer:
 
     def stem(self, word):
         word = self.step_1a(word)
-        word = self.step_1a(word)
+        word = self.step_1b(word)
         word = self.step_1c(word)
         word = self.step_2(word)
         word = self.step_3(word)
@@ -207,3 +207,8 @@ class PorterStemmer:
         word = self.step_5a(word)
         word = self.step_5b(word)
         return word
+
+
+# test
+stemmer = PorterStemmer()
+print(stemmer.step_1b('portrayed'))
