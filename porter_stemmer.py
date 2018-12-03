@@ -188,7 +188,7 @@ class PorterStemmer:
     def step_5a(self, word):
         if self.measure(word[:-1]) > 1 and word.endswith('e'):
             word = word[:-1]
-        elif self.measure(word[:-1]) == 1 and (not self.end_with_cvc(word[:-1])) and word.endswith('ize'):
+        elif self.measure(word[:-1]) == 1 and (not self.end_with_cvc(word[:-1])) and word.endswith('e'):
             word = word[:-1]
         return word
 
@@ -210,5 +210,104 @@ class PorterStemmer:
 
 
 # test
-stemmer = PorterStemmer()
-print(stemmer.step_1b('portrayed'))
+test = False
+if test:
+    stemmer = PorterStemmer()
+
+    # tests for step 1a
+    print('Step 1a:')
+    print('caresses ->', stemmer.step_1a('caresses'))
+    print('ponies   ->', stemmer.step_1a('ponies'))
+    print('ties     ->', stemmer.step_1a('ties'))
+    print('caress   ->', stemmer.step_1a('caress'))
+    print('cats     ->', stemmer.step_1a('cats'))
+
+    # tests for step 1b
+    print('\nStep 1b:')
+    print('feed      ->', stemmer.step_1b('feed'))
+    print('agreed    ->', stemmer.step_1b('agreed'))
+    print('plastered ->', stemmer.step_1b('plastered'))
+    print('bled      ->', stemmer.step_1b('bled'))
+    print('motoring  ->', stemmer.step_1b('motoring'))
+    print('sing      ->', stemmer.step_1b('sing'))
+    print('conflated ->', stemmer.step_1b('conflated'))
+    print('troubled  ->', stemmer.step_1b('troubled'))
+    print('sized     ->', stemmer.step_1b('sized'))
+    print('hopping   ->', stemmer.step_1b('hopping'))
+    print('tanned    ->', stemmer.step_1b('tanned'))
+    print('falling   ->', stemmer.step_1b('falling'))
+    print('hissing   ->', stemmer.step_1b('hissing'))
+    print('failing   ->', stemmer.step_1b('failing'))
+    print('filling   ->', stemmer.step_1b('filling'))
+
+    # tests for step 1c
+    print('\nStep 1c:')
+    print('happy ->', stemmer.step_1c('happy'))
+    print('sky   ->', stemmer.step_1c('sky'))
+
+    # tests for step 2
+    print('\nStep 2:')
+    print('relational     ->', stemmer.step_2('relational'))
+    print('conditional    ->', stemmer.step_2('conditional'))
+    print('rational       ->', stemmer.step_2('rational'))
+    print('valenci        ->', stemmer.step_2('valenci'))
+    print('hesitanci      ->', stemmer.step_2('hesitanci'))
+    print('digitizer      ->', stemmer.step_2('digitizer'))
+    print('conformabli    ->', stemmer.step_2('conformabli'))
+    print('radicalli      ->', stemmer.step_2('radicalli'))
+    print('differentli    ->', stemmer.step_2('differentli'))
+    print('vileli         ->', stemmer.step_2('vileli'))
+    print('analogousli    ->', stemmer.step_2('analogousli'))
+    print('vietnamization ->', stemmer.step_2('vietnamization'))
+    print('predication     ->', stemmer.step_2('predication'))
+    print('operator       ->', stemmer.step_2('operator'))
+    print('feudalism      ->', stemmer.step_2('feudalism'))
+    print('decisiveness   ->', stemmer.step_2('decisiveness'))
+    print('hopefulness    ->', stemmer.step_2('hopefulness'))
+    print('callousness    ->', stemmer.step_2('callousness'))
+    print('formaliti      ->', stemmer.step_2('formaliti'))
+    print('sensitiviti    ->', stemmer.step_2('sensitiviti'))
+    print('sensibiliti    ->', stemmer.step_2('sensibiliti'))
+
+    # tests for step 3
+    print('\nStep 3:')
+    print('triplicate  ->', stemmer.step_3('triplicate'))
+    print('formative   ->', stemmer.step_3('formative'))
+    print('formalize   ->', stemmer.step_3('formalize'))
+    print('electriciti ->', stemmer.step_3('electriciti'))
+    print('electrical  ->', stemmer.step_3('electrical'))
+    print('hopeful     ->', stemmer.step_3('hopeful'))
+    print('goodness    ->', stemmer.step_3('goodness'))
+
+    # tests for step 4
+    print('\nStep 4:')
+    print('revival     ->', stemmer.step_4('revival'))
+    print('allowance   ->', stemmer.step_4('allowance'))
+    print('inference   ->', stemmer.step_4('inference'))
+    print('airliner    ->', stemmer.step_4('airliner'))
+    print('gyroscopic  ->', stemmer.step_4('gyroscopic'))
+    print('adjustable  ->', stemmer.step_4('adjustable'))
+    print('defensible  ->', stemmer.step_4('defensible'))
+    print('irritant    ->', stemmer.step_4('irritant'))
+    print('replacement ->', stemmer.step_4('replacement'))
+    print('adjustment  ->', stemmer.step_4('adjustment'))
+    print('dependent   ->', stemmer.step_4('dependent'))
+    print('adoption    ->', stemmer.step_4('adoption'))
+    print('homologou   ->', stemmer.step_4('homologou'))
+    print('communism   ->', stemmer.step_4('communism'))
+    print('activate    ->', stemmer.step_4('activate'))
+    print('angulariti  ->', stemmer.step_4('angulariti'))
+    print('homologous  ->', stemmer.step_4('homologous'))
+    print('effective   ->', stemmer.step_4('effective'))
+    print('bowdlerize  ->', stemmer.step_4('bowdlerize'))
+
+    # tests for step 5a
+    print('\nStep 5a:')
+    print('probate ->', stemmer.step_5a('probate'))
+    print('rate    ->', stemmer.step_5a('rate'))
+    print('cease   ->', stemmer.step_5a('cease'))
+
+    # tests for step 5b
+    print('\nStep 5b:')
+    print('controll ->', stemmer.step_5b('control'))
+    print('roll     ->', stemmer.step_5b('roll'))
