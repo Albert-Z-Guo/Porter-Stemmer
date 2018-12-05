@@ -210,7 +210,7 @@ class PorterStemmer:
 
 
 # test
-test = False
+test = True
 if test:
     stemmer = PorterStemmer()
 
@@ -311,3 +311,10 @@ if test:
     print('\nStep 5b:')
     print('controll ->', stemmer.step_5b('control'))
     print('roll     ->', stemmer.step_5b('roll'))
+
+
+    # general tests
+    print('\nGeneral tests:')
+    print(stemmer.stem("Sally's"))
+    print(stemmer.stem('hitting'))
+    print(stemmer.stem('digging'))
