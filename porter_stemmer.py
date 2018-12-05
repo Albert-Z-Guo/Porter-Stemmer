@@ -318,3 +318,6 @@ if test:
     print(stemmer.stem("Sally's"))
     print(stemmer.stem('hitting'))
     print(stemmer.stem('digging'))
+    print(stemmer.stem("I'll"))
+    print(stemmer.stem("We've"))
+    print(stemmer.stem("don't"))
