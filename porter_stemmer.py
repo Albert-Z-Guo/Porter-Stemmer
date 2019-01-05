@@ -12,7 +12,7 @@ class PorterStemmer:
             if letter_index == 0:
                 return True
             # y becomes a vowel if preceded by a consonant
-        elif not self.vowel(word[letter_index - 1]):
+            elif not self.vowel(word[letter_index - 1]):
                 return False
 
     def measure(self, word, return_word_in_vc_representation=False):
