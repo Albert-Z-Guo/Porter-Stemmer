@@ -1,9 +1,9 @@
 class PorterStemmer:
     def vowel(self, letter):
-            if letter == 'a' or letter == 'e' or letter == 'i' or letter == 'o' or letter == 'u':
-                return True
-            else:
-                return False
+        if letter == 'a' or letter == 'e' or letter == 'i' or letter == 'o' or letter == 'u':
+            return True
+        else:
+            return False
 
     def consonant(self, word, letter_index):
         if not self.vowel(word[letter_index]) and word[letter_index] != 'y':
